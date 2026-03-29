@@ -1,0 +1,33 @@
+<html>
+<body>
+  <form onsubmit="send(event)">
+    <input type="text" id="username" placeholder="Enter username"/><br>
+    <input type="text" id="email" placeholder="Enter email"/><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function send(event) {
+      event.preventDefault(); // prevent page reload
+
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+
+      fetch("http://localhost:3000/registers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ username, email })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log("Success:", data);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+    }
+  </script>
+</body>
+</html>
