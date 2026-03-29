@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beautiful Web Page</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+      color: #333;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #222;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #0077ff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      margin: 1rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    button {
+      padding: 0.7rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background: #0077ff;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #005fcc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Dark Mode */
+    body.dark {
+      background: linear-gradient(135deg, #232526 0%, #414345 100%);
+      color: #f0f0f0;
+    }
+
+    body.dark header h1,
+    body.dark nav a {
+      color: #f0f0f0;
+    }
+
+    body.dark .card {
+      background: #333;
+      color: #f0f0f0;
+    }
+
+    body.dark button {
+      background: #ff9800;
+    }
+
+    body.dark button:hover {
+      background: #e68900;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>✨ Welcome to My Beautiful Page ✨</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Interactive Design</h2>
+      <p>This page is styled with gradients, glass effects, and hover animations.</p>
+    </div>
+    <div class="card">
+      <h2>Dark Mode Toggle</h2>
+      <p>Click the button below to switch between light and dark themes.</p>
+      <button onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Made with ❤️ using HTML, CSS, and JS</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
