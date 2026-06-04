@@ -1,0 +1,52 @@
+/* Base reset and shared variables */
+:root {
+  --color-primary: #0077ff;
+  --color-primary-hover: #005fcc;
+  --color-bg-gradient-start: #74ebd5;
+  --color-bg-gradient-end: #ACB6E5;
+  --color-text: #333;
+  --color-heading: #222;
+  --color-card-bg: white;
+  --color-card-shadow: rgba(0, 0, 0, 0.1);
+  --color-glass-bg: rgba(255, 255, 255, 0.2);
+  --font-family: 'Segoe UI', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+}
+
+body.dark {
+  --color-primary: #ff9800;
+  --color-primary-hover: #e68900;
+  --color-bg-gradient-start: #232526;
+  --color-bg-gradient-end: #414345;
+  --color-text: #f0f0f0;
+  --color-heading: #f0f0f0;
+  --color-card-bg: #333;
+  --color-card-shadow: rgba(0, 0, 0, 0.3);
+  --color-glass-bg: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background: linear-gradient(135deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-end) 100%);
+  color: var(--color-text);
+  transition: background 0.5s, color 0.5s;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-heading);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
