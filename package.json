@@ -1,0 +1,12 @@
+{
+  "name": "hellofiles",
+  "version": "1.0.0",
+  "description": "A beautiful static web page with theme toggling, navigation, and utilities.",
+  "scripts": {
+    "test": "jest --verbose",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
