@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Hello Files</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Register</h1>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Create an Account</h2>
+      <form id="register-form" onsubmit="handleRegister(event)">
+        <div class="form-group">
+          <input class="form-input" type="text" id="username" placeholder="Enter username" required>
+        </div>
+        <div class="form-group">
+          <input class="form-input" type="email" id="email" placeholder="Enter email" required>
+        </div>
+        <button class="btn" type="submit">Submit</button>
+      </form>
+      <p id="form-message" style="margin-top: 1rem;"></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Made with HTML, CSS, and JS</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/theme.js"></script>
+  <script>
+    async function handleRegister(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('form-message');
+
+      try {
+        const data = await Api.post('/registers', { username, email });
+        message.textContent = 'Registration successful!';
+        message.style.color = 'green';
+      } catch (error) {
+        message.textContent = 'Registration failed. Please try again.';
+        message.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>
